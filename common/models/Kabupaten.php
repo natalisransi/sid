@@ -34,7 +34,6 @@ class Kabupaten extends \yii\db\ActiveRecord
             [['kabupaten_kode', 'kabupaten_nama', 'provinsi_provinsi_id'], 'required'],
             [['provinsi_provinsi_id'], 'integer'],
             [['kabupaten_kode', 'kabupaten_nama'], 'string', 'max' => 45],
-            [['kabupaten_kode'], 'unique'],
             [['provinsi_provinsi_id'], 'exist', 'skipOnError' => true, 'targetClass' => Provinsi::className(), 'targetAttribute' => ['provinsi_provinsi_id' => 'provinsi_id']],
         ];
     }

@@ -70,7 +70,7 @@ class DataPendudukController extends Controller
             return $this->redirect(['view', 'id' => $model->anggota_keluarga_id]);
         }
 
-        return $this->renderAjax('create', [
+        return $this->render('create', [
             'model' => $model,
         ]);
     }

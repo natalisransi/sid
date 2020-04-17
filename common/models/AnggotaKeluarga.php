@@ -9,12 +9,13 @@ use Yii;
  *
  * @property int $anggota_keluarga_id
  * @property string $nik
- * @property string|null $nama
+ * @property string $nama
  * @property int $keluarga_id
  * @property string|null $gelar_depan
  * @property string|null $gelar_belakang
- * @property string|null $jenis_kelamin
+ * @property string $jenis_kelamin
  * @property string|null $tempat_lahir
+ * @property string|null $tgl_lahir
  * @property int $agama_id
  * @property int|null $pendidikan_id
  * @property int|null $pekerjaan_id
@@ -53,13 +54,12 @@ class AnggotaKeluarga extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nik', 'keluarga_id', 'agama_id', 'status_hubungan_status_hubungan_id'], 'required'],
+            [['nik', 'nama', 'keluarga_id', 'jenis_kelamin', 'agama_id', 'status_hubungan_status_hubungan_id'], 'required'],
             [['keluarga_id', 'agama_id', 'pendidikan_id', 'pekerjaan_id', 'golongan_darah_id', 'status_perkawinan_id', 'status_hubungan_status_hubungan_id'], 'integer'],
             [['jenis_kelamin'], 'string'],
-            [['tgl_perkawinan'], 'safe'],
+            [['tgl_lahir', 'tgl_perkawinan'], 'safe'],
             [['nik', 'gelar_depan', 'gelar_belakang', 'tempat_lahir', 'no_paspor', 'no_kitap', 'ibu'], 'string', 'max' => 45],
             [['nama', 'ayah'], 'string', 'max' => 145],
-            [['nik'], 'unique'],
             [['agama_id'], 'exist', 'skipOnError' => true, 'targetClass' => Agama::className(), 'targetAttribute' => ['agama_id' => 'agama_id']],
             [['golongan_darah_id'], 'exist', 'skipOnError' => true, 'targetClass' => GolonganDarah::className(), 'targetAttribute' => ['golongan_darah_id' => 'golongan_darah_id']],
             [['keluarga_id'], 'exist', 'skipOnError' => true, 'targetClass' => Keluarga::className(), 'targetAttribute' => ['keluarga_id' => 'keluarga_id']],
@@ -84,6 +84,7 @@ class AnggotaKeluarga extends \yii\db\ActiveRecord
             'gelar_belakang' => 'Gelar Belakang',
             'jenis_kelamin' => 'Jenis Kelamin',
             'tempat_lahir' => 'Tempat Lahir',
+            'tgl_lahir' => 'Tgl Lahir',
             'agama_id' => 'Agama ID',
             'pendidikan_id' => 'Pendidikan ID',
             'pekerjaan_id' => 'Pekerjaan ID',

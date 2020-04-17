@@ -34,7 +34,6 @@ class Kecamatan extends \yii\db\ActiveRecord
             [['kecamatan_kode', 'kecamatan_nama', 'kabupaten_kabupaten_id'], 'required'],
             [['kabupaten_kabupaten_id'], 'integer'],
             [['kecamatan_kode', 'kecamatan_nama'], 'string', 'max' => 45],
-            [['kecamatan_kode'], 'unique'],
             [['kabupaten_kabupaten_id'], 'exist', 'skipOnError' => true, 'targetClass' => Kabupaten::className(), 'targetAttribute' => ['kabupaten_kabupaten_id' => 'kabupaten_id']],
         ];
     }

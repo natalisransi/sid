@@ -37,7 +37,6 @@ class Surat extends \yii\db\ActiveRecord
             [['surat_nomor', 'jenis_surat_id', 'perangkat_desa_id', 'anggota_keluarga_id'], 'required'],
             [['jenis_surat_id', 'perangkat_desa_id', 'anggota_keluarga_id'], 'integer'],
             [['surat_nomor', 'tgl_surat'], 'string', 'max' => 45],
-            [['surat_nomor'], 'unique'],
             [['anggota_keluarga_id'], 'exist', 'skipOnError' => true, 'targetClass' => AnggotaKeluarga::className(), 'targetAttribute' => ['anggota_keluarga_id' => 'anggota_keluarga_id']],
             [['jenis_surat_id'], 'exist', 'skipOnError' => true, 'targetClass' => JenisSurat::className(), 'targetAttribute' => ['jenis_surat_id' => 'jenis_surat_id']],
             [['perangkat_desa_id'], 'exist', 'skipOnError' => true, 'targetClass' => PerangkatDesa::className(), 'targetAttribute' => ['perangkat_desa_id' => 'perangkat_desa_id']],

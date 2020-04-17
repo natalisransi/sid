@@ -35,7 +35,6 @@ class DesaKelurahan extends \yii\db\ActiveRecord
             [['kecamatan_id'], 'integer'],
             [['desa_kelurahan_kode'], 'string', 'max' => 45],
             [['desa_kelurahan_nama'], 'string', 'max' => 145],
-            [['desa_kelurahan_kode'], 'unique'],
             [['kecamatan_id'], 'exist', 'skipOnError' => true, 'targetClass' => Kecamatan::className(), 'targetAttribute' => ['kecamatan_id' => 'kecamatan_id']],
         ];
     }

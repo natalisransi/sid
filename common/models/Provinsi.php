@@ -31,7 +31,6 @@ class Provinsi extends \yii\db\ActiveRecord
         return [
             [['provinsi_kode', 'provinsi_nama'], 'required'],
             [['provinsi_kode', 'provinsi_nama'], 'string', 'max' => 45],
-            [['provinsi_kode'], 'unique'],
         ];
     }
 

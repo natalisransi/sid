@@ -35,7 +35,6 @@ class DusunRw extends \yii\db\ActiveRecord
             [['desa_kelurahan_id'], 'integer'],
             [['dusun_rw_kode'], 'string', 'max' => 45],
             [['dusun_rw_nama'], 'string', 'max' => 145],
-            [['dusun_rw_kode'], 'unique'],
             [['desa_kelurahan_id'], 'exist', 'skipOnError' => true, 'targetClass' => DesaKelurahan::className(), 'targetAttribute' => ['desa_kelurahan_id' => 'desa_kelurahan_id']],
         ];
     }
@@ -54,7 +53,7 @@ class DusunRw extends \yii\db\ActiveRecord
     }
 
     /**
-     * Gets query for [[DataDesaKelurahan]].
+     * Gets query for [[DesaKelurahan]].
      *
      * @return \yii\db\ActiveQuery
      */

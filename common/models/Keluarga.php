@@ -35,8 +35,6 @@ class Keluarga extends \yii\db\ActiveRecord
             [['keluarga_kode', 'dusun_rw_id'], 'required'],
             [['dusun_rw_id'], 'integer'],
             [['keluarga_kode', 'keluarga_kk', 'alamat'], 'string', 'max' => 45],
-            [['keluarga_kode'], 'unique'],
-            [['keluarga_kk'], 'unique'],
             [['dusun_rw_id'], 'exist', 'skipOnError' => true, 'targetClass' => DusunRw::className(), 'targetAttribute' => ['dusun_rw_id' => 'dusun_rw_id']],
         ];
     }
