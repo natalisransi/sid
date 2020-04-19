@@ -14,7 +14,7 @@ class DataPenduduk extends AnggotaKeluarga
             'anggota_keluarga_id' => 'Anggota Keluarga ID',
             'nik' => 'NIK',
             'nama' => 'Nama',
-            'keluarga_id' => 'Nomor KK',
+            'keluarga_id' => 'Nomor KK ',
             'gelar_depan' => 'Gelar Depan',
             'gelar_belakang' => 'Gelar Belakang',
             'jenis_kelamin' => 'Jenis Kelamin',
