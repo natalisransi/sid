@@ -45,5 +45,10 @@
             "type": "composer",
             "url": "https://asset-packagist.org"
         }
-    ]
+    ],
+    "scripts": {
+        "compile": [
+            "php init --env=Development --overwrite=a"
+        ]
+    }
 }
