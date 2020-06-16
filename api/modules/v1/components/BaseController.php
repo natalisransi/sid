@@ -22,6 +22,15 @@ class BaseController extends ActiveController
                     'application/json' => Response::FORMAT_JSON,
                 ],
             ],
+            'authenticator' => [
+                'class' => \yii\filters\auth\CompositeAuth::class,
+                'authMethods' => [
+                    \yii\filters\auth\HttpBasicAuth::class,
+                    \yii\filters\auth\QueryParamAuth::class,
+                    \yii\filters\auth\HttpBearerAuth::class,
+                    \yii\filters\auth\HttpHeaderAuth::class,
+                ],
+            ],
             'corsFilter' => [
                 'class' => Cors::class,
                 'cors' => [
@@ -37,7 +46,7 @@ class BaseController extends ActiveController
             'verbs' => [
                 'class' => VerbFilter::class,
                 'actions' => [
-                    //'set-sync' => ['post'],
+                    //'login' => ['post'],
                 ],
             ],
         ]);
