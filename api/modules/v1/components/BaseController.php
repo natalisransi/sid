@@ -1,6 +1,6 @@
 <?php
 
-namespace api\modules\v1\controllers;
+namespace api\modules\v1\components;
 
 use yii\filters\ContentNegotiator;
 use yii\filters\Cors;
