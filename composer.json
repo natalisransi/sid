@@ -21,7 +21,9 @@
         "dmstr/yii2-adminlte-asset": "^2.1",
         "kartik-v/yii2-widget-select2": "@dev",
         "2amigos/yii2-date-picker-widget": "~1.0",
-        "deesoft/yii2-gii": "~1.0"
+        "deesoft/yii2-gii": "~1.0",
+        "firebase/php-jwt": "~5.2.0",
+        "2amigos/yii2-highcharts-widget": "~1.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
